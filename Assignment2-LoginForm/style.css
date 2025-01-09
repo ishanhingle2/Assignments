@@ -1,0 +1,61 @@
+body{
+    display: flex;
+    background-color: aliceblue;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+   background-color: white;
+   width: 60%;
+   height:auto;
+   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+   border-radius: 3%;
+}
+@media screen and (max-width: 768px){
+    .container{
+        width: 90%;
+        padding:1rem;
+        margin-top: 16%;
+    }
+    img{
+        width: 8px;
+    }
+}
+
+img{
+    width: 4%;
+    margin-left: 90%;
+    margin-top: -27px;
+    z-index:1 ;
+    position: relative;
+}
+
+button{
+    background-color: blue;
+    color: white;
+    padding: 1%;
+}
+
+h1{
+    text-align:center;
+    margin:2%;
+    font-size: 1.5rem;
+}
+form{
+    display:flex;
+    flex-direction: column;
+    padding:2rem;
+    font-weight: 600;
+    font-family: system-ui;
+}
+.labels{
+    color: #bdb7b7;
+    margin:1% 2% 1% 2%;
+}
+.inputs{
+    padding:1%;
+    margin-left: 1%;
+}
+p{
+    color:red;
+}
