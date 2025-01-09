@@ -1,0 +1,104 @@
+Section 1-GIT and GITHUB
+
+->difference between git and GitHub: Git is a version control software and GitHub is a version control repo hosting service.
+
+->GitHub functionality includes : fork(duplicating some repo), pull request(we can ask someone to add changes made by us into his/her branch), merge (we can add changes to our repo that were done in some other branch).
+
+-> Git commands:
+1.git init: to initialize repo
+2.git add (file name): to particular file to staging area 
+3.git commit -m "message": to commit changes to our local repo
+4.git push origin branch-name: to push changes to particular branch.
+5.git pull origin branch-name: to pull changes from particular branch.
+6.git fetch origin branch-name:we get all the history of particular branch.
+7.git merge origin/branch-name: to combine changes of branches using the information that we acquire using fetch.
+
+pull is basically combination of fetch and merge.
+
+8.git status: shows untracked,staged or modified files.
+9. git config -global user.name "name": to set author name/email
+10. git diff: get difference between working area/tree and staging area. 
+11. git reset: unstages the files.
+12. git reset hard: we use this to permanently delete local changes.
+13. git rm filename: to a file
+14. git log: to get history y.
+15. git branch: get list of all branches.
+16. git branch branchname :to create new branch.
+17. git checkout branchname: to switch into branches. 
+18. git stash: it deletes the local changes and gets back to head commit but store the changes temporarily.
+
+git merge vs rebase vs squash commit
+
+git merge: pull latest changes to main from particular branch.
+git rebase: moves feature branch to the head of main branch.(we get linear history of what changes were made in secondary branches).
+git squash: combine all the commits of secondary branch and the committing to the main branch. 
+
+Section 2- Web Fundamentals
+
+HTTP: Hypertext transfer protocol (hypertext is a text which has link to some other text or content). It is basically protocol which decides data packet size, formatting, data structure, how request response cycle would work. It ensures smooth communication between client and server. 
+HTTPS: HTTP + secure. It is more secure has encryption, it makes sure data is not tempered and also websites using https should have ssl(secure socket layer)/tls (transport layer security)certificate. 
+
+HTTP headers: Metadata that has several information like content-type, session information, authorization information, cookies etc.
+
+Types of headers:
+a) request headers
+b) response headers
+c) representation headers
+d) payload headers
+
+Different type of http request: 
+1.GET: to get data
+2.POST: to send some data like media files or normal text data.
+3.DELETE: to delete some data.
+4.PUT: to replace the data.
+5.PATCH: to update the data.
+6.HEAD: to access some metadata not the actual data
+7.OPTIONS: to see what actions you can perform.
+8.TRACE:to check if requests are received correctly or not.
+9. CONNECT: used to connect through a proxy server.
+
+
+Different response status codes: 
+1xx: information like processing.
+2xx: success response.
+3xx : to redirect to a new address. 
+4xx: client error(problem with the request).
+5xx: problem with the server. 
+
+some common status codes 
+200-ok
+201-created
+404-not found
+401-unauthorized.
+400-bad request
+307-temporary redirect.
+308 permanent redirect.
+500-internal server error.
+
+API: stands for application programming interface provides communication between two software's.
+
+Types of API
+Internal API: hidden from external users 
+Open AI: publicly available.
+Partner: shared between partners.
+Composite API: to combine multiple data to access several endpoints in a single call.
+
+
+API architecture styles: 
+1.REST: Representational state transfer. uses http. simple lightwight. uses json or xml.
+2. SOAP: simple object access protocol. uses xml and http. It is more complicated but relible.
+3. GraphQL: it is also query language. has single end point. 
+4.gRPC:google remote procedure call. It is high performance framework for rpc.
+5.web socket: bidirection and low latency
+6.web hook: asynchronous applications.
+
+REST API design best practices:
+
+
+use nouns over verbs, when naming collection of resources use plural nouns.
+
+versioning api for backward compatibility api/v1/user
+
+use proper status code
+
+apply pagination and filtering.
