@@ -23,14 +23,18 @@
             <p id="emailError"></p>
 
             <label for="password" class="labels">Password:</label>
-            <input class="inputs" type="password" id="password" name="password" ">
-            <img id="passwordEye" src="./eye-slash-regular.svg" onclick="togglePassword()">
+            <div class="iconInput">
+                <input class="inputs" type="password" id="password" name="password" ">
+                 <img id="passwordEye" src="./eye-slash-regular.svg" onclick="togglePassword()">
+            </div>
             <p id="passwordError"></p>
 
             <label for="confirmPassword" class="labels">Confirm Password:</label>
-            <input class="inputs" type="password" id="confirmPassword" placeholder="Reenter your password"
-                name="confirmPassword"></i>
-            <img id="confirmPasswordEye" onclick="toggleConfirmPassword()" src="./eye-slash-regular.svg">
+            <div class="iconInput">
+                <input class="inputs" type="password" id="confirmPassword" placeholder="Reenter your password"
+                    name="confirmPassword"></i>
+                <img id="confirmPasswordEye" onclick="toggleConfirmPassword()" src="./eye-slash-regular.svg">
+            </div>
             <p id="confirmPasswordError"></p>
 
             <button type="submit">Sign Up</button>

@@ -11,7 +11,7 @@ body{
    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
    border-radius: 3%;
 }
-@media screen and (max-width: 768px){
+@media (max-width: 768px){
     .container{
         width: 90%;
         padding:1rem;
@@ -19,15 +19,25 @@ body{
     }
     img{
         width: 8px;
+        margin-top: -10px;
     }
 }
 
-img{
-    width: 4%;
-    margin-left: 90%;
-    margin-top: -27px;
-    z-index:1 ;
+
+.iconInput{
+    display: flex;
+    align-items: center;
     position: relative;
+    input{
+        width: 100%
+    }
+    img{
+        position: absolute;
+        right: 10px;
+        z-index: 1;
+        width: 5%;
+        margin-top: 0.5%;
+    }
 }
 
 button{
