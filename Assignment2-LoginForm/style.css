@@ -3,6 +3,8 @@ body{
     background-color: aliceblue;
     justify-content: center;
     align-items: center;
+    margin: 0px;
+    padding: 0px;
 }
 .container{
    background-color: white;
@@ -10,10 +12,14 @@ body{
    height:auto;
    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
    border-radius: 3%;
+   position: fixed;
+   top:50%;
+   translate:0px -50%
+   
 }
 @media (max-width: 768px){
     .container{
-        width: 90%;
+        max-width: 90%;
         padding:1rem;
         margin-top: 16%;
     }
@@ -35,7 +41,7 @@ body{
         position: absolute;
         right: 10px;
         z-index: 1;
-        width: 5%;
+        width: 3%;
         margin-top: 0.5%;
     }
 }
