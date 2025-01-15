@@ -12,11 +12,7 @@ const selectStyle={
     marginLeft:'2%'
 }
 const sortAscending=(a,b)=>{
-    const priceA=parseFloat(a.price.split(' ')[0])
-    const priceB=parseFloat(b.price.split(' ')[0])
-    if(priceA<priceB) return -1;
-    else if (priceA>priceB) return 1;
-    else return 0;
+    return a.priceNumeric-b.priceNumeric
 }
 function SortBy() {
     const products=useSelector(state=>state.products);
