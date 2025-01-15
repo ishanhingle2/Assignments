@@ -1,0 +1,13 @@
+body {
+ background-color: #f3f3f4;
+ border-radius: 5%;
+}
+*{
+  font-family:sans-serif;
+  border-radius: 6px;
+}
+code {
+  font-family: LatoGoogle, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
