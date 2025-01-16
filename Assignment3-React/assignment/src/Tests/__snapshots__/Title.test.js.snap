@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot testing with mocking useSelector 1`] = `
+<div>
+  <h1
+    data-testid="title1"
+    style="font-size: 30px;"
+  >
+    32
+     Used Cars in India
+  </h1>
+</div>
+`;

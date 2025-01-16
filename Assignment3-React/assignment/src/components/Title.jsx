@@ -8,7 +8,7 @@ function Title() {
     let value=0;
     value=useSelector(state=>state.products.length)
     return (
-    <h1 style={styles}>
+    <h1 style={styles} data-testid="title1">
        {value} Used Cars in India
     </h1>
   )

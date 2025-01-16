@@ -30,7 +30,6 @@ const updateUrl = (e) => {
 function FuelCheckBox({ type, value}) {
     const dispatch=useDispatch();
     const ref=useRef(null);
-    const products=useSelector(state=>state.products);
     useEffect(()=>{
         const fuelQuery=new URLSearchParams(window.location.search).get('fuel')
         if(fuelQuery && fuelQuery.includes(value)) ref.current.checked=true
@@ -43,7 +42,7 @@ function FuelCheckBox({ type, value}) {
     }
     return (
         <label style={styles}>
-            <input type='checkbox' onClick={handleClick} value={value} ref={ref}/>
+            <input type='checkbox' data-testid='checkbox' onClick={handleClick} value={value} ref={ref}/>
             {type}
         </label>
     )
