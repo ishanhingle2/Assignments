@@ -14,7 +14,6 @@ test('snapshot testing with mocking useSelector',()=>{
 
 test('text checking',()=>{
     render(<Title/>)
-    console.log(useSelector());
     const text=screen.queryByTestId('title1').innerHTML;
     expect(text).toBe('32 Used Cars in India')
 })

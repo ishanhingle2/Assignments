@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux"
 
 jest.mock('react-redux')
 beforeEach(()=>{
-     const dispatch_function=(url)=>{console.log("dipatcher called")}
+     const dispatch_function=(url)=>{}
      useDispatch.mockReturnValue(dispatch_function)
 })
 describe('FuelCheckBox Testing',()=>{
@@ -12,11 +12,14 @@ describe('FuelCheckBox Testing',()=>{
         render(<FuelCheckBox/>)
         const checkbox=screen.queryByRole('checkbox')
         fireEvent.click(checkbox)
-        expect(checkbox.toBeChecked();
+        expect(checkbox.checked).toBeTruthy();
     })
 
     // To check weather url is updating, when checked box is clicked 
     it('Url Update on Checking',()=>{
-
+        render(<FuelCheckBox value={1}/>)
+        const checkbox=screen.queryByRole('checkbox')
+        fireEvent.click(checkbox)
+        expect(decodeURIComponent(window.location.search)).toContain('1')
     })
 })
