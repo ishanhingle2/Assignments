@@ -1,6 +1,7 @@
 import { fireEvent, render,screen } from "@testing-library/react"
 import FuelCheckBox from "../components/FuelCheckBox"
 import { useDispatch } from "react-redux"
+import { Checkbox } from "@mui/material"
 
 jest.mock('react-redux')
 beforeEach(()=>{
@@ -22,4 +23,9 @@ describe('FuelCheckBox Testing',()=>{
         fireEvent.click(checkbox)
         expect(decodeURIComponent(window.location.search)).toContain('1')
     })
+})
+
+it("fuel checkbox snapshot",()=>{
+    const {component}=render(<Checkbox/>)
+    expect(component).toMatchSnapshot()
 })

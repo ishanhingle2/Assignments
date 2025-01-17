@@ -8,7 +8,6 @@ const styles={
     padding:'0px 0px 12px 0px',
     marginTop:'10px',
     color:'333333',
-    fontFamily:'LatoGoogle',
     textOverflow:'ellipsis',
     height:'60%',
     outline:'rgb(255,0,0) dotted 0.4px'
@@ -21,7 +20,7 @@ const imageStyle={
 }
 
 const titleStyle={
-    fontSize:'20px',
+    fontSize:'17px',
     fontWeight:'600',
     margin:'5%',
     overflow:'hidden',
@@ -53,7 +52,7 @@ function Product({product}) {
       <img style={imageStyle} src={imageUrl} alt='Image Loading'/>
       <h1 style={titleStyle}>{carName}</h1>
       <h1 style={infoStyle}>{km} | {fuel} | {cityName}</h1>
-      <h1 style={{...titleStyle,fontSize:'17px',marginTop:'15px'}}>{price}</h1>
+      <h1 style={{...titleStyle}}>{price}</h1>
       <button style={buttonStyle}>Get Seller Details</button>
     </div>
   )

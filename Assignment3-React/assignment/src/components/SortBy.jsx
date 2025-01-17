@@ -11,7 +11,7 @@ const selectStyle={
     padding:'5px',
     marginLeft:'2%'
 }
-const sortAscending=(a,b)=>{
+export const sortAscending=(a,b)=>{
     return a.priceNumeric-b.priceNumeric
 }
 function SortBy() {
