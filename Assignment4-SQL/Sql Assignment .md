@@ -16,7 +16,8 @@ Foreign Keys:
 3\. In the reviews table we have **product\_id** and and **buyer\_id** as foreign which references **user\_id in users table** and **product\_id in products table.**
 
 ER DIAGRAM:  
-![][image1.png]
+![][image1]
+![alt text](image.png)
 
 Created Tables:  
 ![][image2]
