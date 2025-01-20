@@ -22,25 +22,31 @@ Created Tables:
 ![alt text](image-1.png) 
 
 **Querying and Crud operations:**  
-Creating users:  
+Creating users: 
+
 ![alt text](image-2.png)
 
 Query to get beauty items under 500:
+
 ![alt text](image-3.png)  
 
 Changing order status:  
+
 ![alt text](image-4.png)
 
 Deleting A product:
+
 ![alt text](image-5.png)
 
 **Advanced Queries and Join**
 
 Query to get product name and customer name from orders table   
 Using joins:  
+
 ![alt text](image-6.png)
 
-Get total revenue of products in the year 2024 
+Get total revenue of products in the year 2024:
+
 ![alt text](image-7.png)
 
 Getting Users with Multiple orders:
