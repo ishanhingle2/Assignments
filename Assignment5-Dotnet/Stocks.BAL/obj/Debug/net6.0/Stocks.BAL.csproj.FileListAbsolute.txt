@@ -1,0 +1,15 @@
+D:\Assignments\Assignment5-Dotnet\Stocks.BAL\bin\Debug\net6.0\Stocks.BAL.deps.json
+D:\Assignments\Assignment5-Dotnet\Stocks.BAL\bin\Debug\net6.0\Stocks.BAL.dll
+D:\Assignments\Assignment5-Dotnet\Stocks.BAL\bin\Debug\net6.0\Stocks.BAL.pdb
+D:\Assignments\Assignment5-Dotnet\Stocks.BAL\bin\Debug\net6.0\Stocks.DAL.dll
+D:\Assignments\Assignment5-Dotnet\Stocks.BAL\bin\Debug\net6.0\Stocks.DAL.pdb
+D:\Assignments\Assignment5-Dotnet\Stocks.BAL\obj\Debug\net6.0\Stocks.BAL.csproj.AssemblyReference.cache
+D:\Assignments\Assignment5-Dotnet\Stocks.BAL\obj\Debug\net6.0\Stocks.BAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Assignments\Assignment5-Dotnet\Stocks.BAL\obj\Debug\net6.0\Stocks.BAL.AssemblyInfoInputs.cache
+D:\Assignments\Assignment5-Dotnet\Stocks.BAL\obj\Debug\net6.0\Stocks.BAL.AssemblyInfo.cs
+D:\Assignments\Assignment5-Dotnet\Stocks.BAL\obj\Debug\net6.0\Stocks.BAL.csproj.CoreCompileInputs.cache
+D:\Assignments\Assignment5-Dotnet\Stocks.BAL\obj\Debug\net6.0\Stocks.BAL.csproj.CopyComplete
+D:\Assignments\Assignment5-Dotnet\Stocks.BAL\obj\Debug\net6.0\Stocks.BAL.dll
+D:\Assignments\Assignment5-Dotnet\Stocks.BAL\obj\Debug\net6.0\refint\Stocks.BAL.dll
+D:\Assignments\Assignment5-Dotnet\Stocks.BAL\obj\Debug\net6.0\Stocks.BAL.pdb
+D:\Assignments\Assignment5-Dotnet\Stocks.BAL\obj\Debug\net6.0\ref\Stocks.BAL.dll

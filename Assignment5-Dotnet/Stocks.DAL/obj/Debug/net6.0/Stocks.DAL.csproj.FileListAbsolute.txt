@@ -1,0 +1,12 @@
+D:\Assignments\Assignment5-Dotnet\Stocks.DAL\bin\Debug\net6.0\Stocks.DAL.deps.json
+D:\Assignments\Assignment5-Dotnet\Stocks.DAL\bin\Debug\net6.0\Stocks.DAL.dll
+D:\Assignments\Assignment5-Dotnet\Stocks.DAL\bin\Debug\net6.0\Stocks.DAL.pdb
+D:\Assignments\Assignment5-Dotnet\Stocks.DAL\obj\Debug\net6.0\Stocks.DAL.csproj.AssemblyReference.cache
+D:\Assignments\Assignment5-Dotnet\Stocks.DAL\obj\Debug\net6.0\Stocks.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Assignments\Assignment5-Dotnet\Stocks.DAL\obj\Debug\net6.0\Stocks.DAL.AssemblyInfoInputs.cache
+D:\Assignments\Assignment5-Dotnet\Stocks.DAL\obj\Debug\net6.0\Stocks.DAL.AssemblyInfo.cs
+D:\Assignments\Assignment5-Dotnet\Stocks.DAL\obj\Debug\net6.0\Stocks.DAL.csproj.CoreCompileInputs.cache
+D:\Assignments\Assignment5-Dotnet\Stocks.DAL\obj\Debug\net6.0\Stocks.DAL.dll
+D:\Assignments\Assignment5-Dotnet\Stocks.DAL\obj\Debug\net6.0\refint\Stocks.DAL.dll
+D:\Assignments\Assignment5-Dotnet\Stocks.DAL\obj\Debug\net6.0\Stocks.DAL.pdb
+D:\Assignments\Assignment5-Dotnet\Stocks.DAL\obj\Debug\net6.0\ref\Stocks.DAL.dll
