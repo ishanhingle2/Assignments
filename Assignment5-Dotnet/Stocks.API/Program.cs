@@ -1,4 +1,5 @@
 using AutoMapper;
+using Stocks.API.Middlewares;
 using Stocks.BAL.Services;
 using Stocks.DAL.Repositories;
 
@@ -16,6 +17,7 @@ builder.Services.AddScoped<IStockService,StockService>();
 var autoMapper=new MapperConfiguration(item=>item.AddProfile(new AutoMapperHandler()));
 IMapper mapper=autoMapper.CreateMapper();
 builder.Services.AddSingleton(mapper);
+builder.Services.AddTransient<GlobalExceptionHandlingMiddleware>();
 
 var app = builder.Build();
 
@@ -25,7 +27,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 namespace Stocks.API.DTOs;
-public class CreateStockDTO{
+public class UpdateStockDTO{
+        [Required]
+        public int ProfileId{get;set;}
         [Required]
         [MaxLength(100)]
         public string MakeName { get; set; }
