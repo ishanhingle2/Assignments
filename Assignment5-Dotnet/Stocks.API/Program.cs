@@ -14,9 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IStockRepository,StockRepository>();
 builder.Services.AddScoped<IStockService,StockService>();
 //adding autoMapper
-var autoMapper=new MapperConfiguration(item=>item.AddProfile(new AutoMapperHandler()));
-IMapper mapper=autoMapper.CreateMapper();
-builder.Services.AddSingleton(mapper);
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddTransient<GlobalExceptionHandlingMiddleware>();
 
 var app = builder.Build();

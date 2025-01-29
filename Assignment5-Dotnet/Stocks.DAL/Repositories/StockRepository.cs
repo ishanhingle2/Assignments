@@ -71,7 +71,8 @@ public class StockRepository : IStockRepository
         Km=@Km
         WHERE ProfileId = @ProfileId
         ";
-        var affectedRows = await connection.ExecuteAsync(sql, stock);
+        int affectedRows = await connection.ExecuteAsync(sql, stock);
+        Console.WriteLine(affectedRows);
 
         if (affectedRows > 0)
         {
@@ -79,13 +80,13 @@ public class StockRepository : IStockRepository
             var updatedStock = await connection.QuerySingleOrDefaultAsync<StockEntity>(selectSql, new { ProfileId = stock.ProfileId });
             return updatedStock;
         }
-        return null;
+        else return null;
     }
 
      public async Task<StockEntity?> GetStockByIdAsync(int id){
         using var connection=GetDbConnection();
          string sql = "Select * FROM Stocks WHERE ProfileId = @ProfileId";
-         var stock = await connection.QuerySingleAsync<StockEntity>(sql, new { ProfileId = id });
+         StockEntity? stock = await connection.QueryFirstOrDefaultAsync<StockEntity?>(sql, new { ProfileId = id });
          return stock;
      }
 

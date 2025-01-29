@@ -16,7 +16,7 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
             await HandleExceptionAsync(httpContext, ex);
         }
     }
-    private async Task HandleExceptionAsync(HttpContext context, Exception exception)
+    private static async Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
         var statusCode = HttpStatusCode.InternalServerError; 
         string message;
@@ -35,7 +35,7 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
 
             case KeyNotFoundException:
                 statusCode = HttpStatusCode.NotFound;
-                message = "Resource not found";
+                message = exception.Message??"Resource not found";
                 break;
 
             case ArgumentException _:

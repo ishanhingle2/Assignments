@@ -31,6 +31,10 @@ public class StocksController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult> GetById(int id){
         StockEntity? stock=await _stockService.GetStockByIdAsync(id);
+        if (stock == null)
+        {
+            throw new KeyNotFoundException($"Stock with ID {id} not found.");
+        }
         return Ok(stock);
     }
     [HttpPost]
@@ -43,6 +47,10 @@ public class StocksController : ControllerBase
     public async Task<ActionResult> Put([FromBody] UpdateStockDTO stockBody){
         StockEntity stock=_mapper.Map<StockEntity>(stockBody);
         var updatedStock=await _stockService.UpdateStockAsync(stock);
+        if (updatedStock == null)
+        {
+            throw new KeyNotFoundException($"Stock with ID {stockBody.ProfileId} not found.");
+        }
         return Ok(updatedStock);
     }
     [HttpDelete]
