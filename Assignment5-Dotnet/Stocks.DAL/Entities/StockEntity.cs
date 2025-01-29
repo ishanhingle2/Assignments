@@ -21,5 +21,8 @@ namespace Stocks.DAL.Entities
         [Required]
         [Range(0,double.MaxValue)]
         public decimal Price { get; set; }
+        [Required]
+        [Range(0,double.MaxValue)]
+        public decimal Km{get;set;}
     }
 }

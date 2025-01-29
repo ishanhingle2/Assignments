@@ -1,5 +1,6 @@
 using Stocks.DAL.Repositories;
 using Stocks.DAL.Entities;
+using Org.BouncyCastle.Asn1;
 namespace Stocks.BAL.Services;
 
 public class StockService : IStockService
@@ -11,10 +12,27 @@ public class StockService : IStockService
         _stockRepository = stockRepository;
     }
 
-    public async Task<IEnumerable<StockEntity>> GetAllStocksAsync(FilterEntity filter)
+    public async Task<IEnumerable<StockEntity>?> GetAllStocksAsync(FilterEntity filter)
     {
-        // You can add business logic here before/after calling the repository
         return await _stockRepository.GetAllStocksAsync(filter);
+    }
+    public async Task<StockEntity?> CreateStockAsync(StockEntity stock){
+        return await _stockRepository.CreateStockAsync(stock);
+    }
+    public async Task<StockEntity?> UpdateStockAsync(StockEntity stock){
+        return await _stockRepository.UpdateStockAsync(stock);
+    }
+    public async Task<StockEntity?> GetStockByIdAsync(int id){
+        return await _stockRepository.GetStockByIdAsync(id);
+    }
+
+    public async Task DeleteStockAsync(int id){
+        await _stockRepository.DeleteStockAsync(id);
+    }
+    public bool IsValueForMoney(decimal price,decimal km){
+        decimal priceThreshold=200000;
+        decimal kmThreshold=10000;
+        return (price<priceThreshold && km<kmThreshold);
     }
 }
 
