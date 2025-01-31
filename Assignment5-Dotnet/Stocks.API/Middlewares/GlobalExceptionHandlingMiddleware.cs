@@ -1,10 +1,16 @@
 using System.Net;
 using MySql.Data.MySqlClient;
 using Microsoft.AspNetCore.Http;
+using System.ComponentModel.DataAnnotations;
+using Microsoft.Extensions.Logging;
 namespace Stocks.API.Middlewares;
 
 public class GlobalExceptionHandlingMiddleware : IMiddleware
 {
+    private readonly ILogger<GlobalExceptionHandlingMiddleware> _logger;
+    public GlobalExceptionHandlingMiddleware(ILogger<GlobalExceptionHandlingMiddleware> logger){
+        _logger=logger;
+    }
     public async Task InvokeAsync(HttpContext httpContext, RequestDelegate next)
     {
         try
@@ -13,44 +19,42 @@ public class GlobalExceptionHandlingMiddleware : IMiddleware
         }
         catch (Exception ex)
         {
+            _logger.LogError("Exception: {Message},\n StackTrace: {StackTrace}", ex.Message, ex.StackTrace);
             await HandleExceptionAsync(httpContext, ex);
         }
     }
     private static async Task HandleExceptionAsync(HttpContext context, Exception exception)
     {
-        var statusCode = HttpStatusCode.InternalServerError; 
-        string message;
-
+        var statusCode = HttpStatusCode.InternalServerError;
+        string message=exception.Message;
         switch (exception)
         {
             case ArgumentNullException:
                 statusCode = HttpStatusCode.BadRequest;
-                message = "One or more required arguments are missing";
                 break;
 
             case MySqlException:
                 statusCode = HttpStatusCode.InternalServerError;
-                message = "Database error occurred";
                 break;
 
             case KeyNotFoundException:
                 statusCode = HttpStatusCode.NotFound;
-                message = exception.Message??"Resource not found";
                 break;
 
             case ArgumentException _:
                 statusCode = HttpStatusCode.BadRequest;
-                message = "Invalid argument provided";
                 break;
 
             case TimeoutException _:
                 statusCode = HttpStatusCode.RequestTimeout;
-                message = "Request timed out";
+                break;
+
+            case ValidationException:
+                statusCode = HttpStatusCode.BadRequest;
                 break;
 
             default:
                 statusCode = HttpStatusCode.InternalServerError;
-                message = "An unexpected error occurred";
                 break;
         }
         context.Response.StatusCode = (int)statusCode;

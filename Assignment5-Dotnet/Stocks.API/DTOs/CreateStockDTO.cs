@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Stocks.DAL.Enums;
 namespace Stocks.API.DTOs;
 public class CreateStockDTO{
         [Required]
@@ -11,6 +12,7 @@ public class CreateStockDTO{
         [Range(1990,2025)]
         public int MakeYear { get; set; }
         [Required]
+        [EnumDataType(typeof(FuelFilterTypeEnum))]
         public String FuelType{get;set;}
         [Required]
         [Range(0,double.MaxValue)]

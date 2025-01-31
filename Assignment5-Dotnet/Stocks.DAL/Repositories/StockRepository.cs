@@ -42,8 +42,6 @@ public class StockRepository : IStockRepository
             sql += " AND FuelType IN @FuelTypes";
             parameters.Add("@FuelTypes", filter.FuelType.Select(f => f.ToString()).ToArray());
         }
-
-        Console.WriteLine(sql);
         var stocks = await connection.QueryAsync<StockEntity>(sql, parameters);
         return stocks;
     }
@@ -72,8 +70,6 @@ public class StockRepository : IStockRepository
         WHERE ProfileId = @ProfileId
         ";
         int affectedRows = await connection.ExecuteAsync(sql, stock);
-        Console.WriteLine(affectedRows);
-
         if (affectedRows > 0)
         {
             string selectSql = "SELECT * FROM Stocks WHERE ProfileId = @ProfileId";
