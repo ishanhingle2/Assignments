@@ -22,6 +22,7 @@ public class StocksController : ControllerBase
     {
         FilterEntity filter=_mapper.Map<FilterEntity>(queryParams);
         var stocks = await _stockService.GetAllStocksAsync(filter);
+        if(stocks==null) return NotFound("No Products Found");
         IEnumerable<ReturnStockDTO> res=_mapper.Map<IEnumerable<ReturnStockDTO>>(stocks);
         foreach(var stock in res){
             stock.IsValueForMoney=_stockService.IsValueForMoney(stock.Price,stock.Km);
@@ -31,10 +32,7 @@ public class StocksController : ControllerBase
     [HttpGet("{id}")]
     public async Task<ActionResult> GetById(int id){
         StockEntity? stock=await _stockService.GetStockByIdAsync(id);
-        if (stock == null)
-        {
-            throw new KeyNotFoundException($"Stock with ID {id} not found.");
-        }
+        if (stock == null) return NotFound("Could Not Found Stock with this Id");
         return Ok(stock);
     }
     [HttpPost]
@@ -47,10 +45,7 @@ public class StocksController : ControllerBase
     public async Task<ActionResult> Put([FromBody] UpdateStockDTO stockBody){
         StockEntity stock=_mapper.Map<StockEntity>(stockBody);
         var updatedStock=await _stockService.UpdateStockAsync(stock);
-        if (updatedStock == null)
-        {
-            throw new KeyNotFoundException($"Stock with ID {stockBody.ProfileId} not found.");
-        }
+        if (updatedStock == null) return NotFound("Could Not Found Stock with this Id");
         return Ok(updatedStock);
     }
     [HttpDelete]
