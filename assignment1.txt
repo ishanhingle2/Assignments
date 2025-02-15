@@ -4,7 +4,7 @@ Section 1-GIT and GITHUB
 
 ->GitHub functionality includes : fork(duplicating some repo), pull request(we can ask someone to add changes made by us into his/her branch), merge (we can add changes to our repo that were done in some other branch).
 
--> Git commands:
+->       Git commands:
 1.git init: to initialize repo
 2.git add (file name): to particular file to staging area 
 3.git commit -m "message": to commit changes to our local repo
